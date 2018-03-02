@@ -1,0 +1,23 @@
+body {
+        padding-top: 54px;
+      }
+@media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+}
+.navbar-brand {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.fav-btn {
+    width: 15px;
+    height: 15px;
+}
+
+.grayscale {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+
+}

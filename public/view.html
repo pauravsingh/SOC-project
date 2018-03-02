@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="soc">
+    <meta name="author" content="Paurav">
+
+    <title>S.O.C</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/table.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Student Opportunity Center</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Create</a>
+            </li>
+            <li class="nav-item  active">
+              <a class="nav-link" href="/view">View
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/favorites">Favorites</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container text-center">
+          <h1 class="mt-5">Opportunities</h1>
+    </div>
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Name</th>
+                                <th class="column2">URL</th>
+                                <th class="column3">Description</th>
+                                <th class="column4">Deadline</th>
+                                <th class="column5">Date</th>
+                                <th class="column6">Tags</th>
+                                <th class="column7"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            {% for row in rows %}
+                            <tr>
+                                <td class="column1">{{ row.name }}</td>
+                                <td class="column2"><a href={{ row.url }}>{{ row.url }}</a></td>
+                                <td class="column3">{{ row.description }}</td>
+                                <td class="column4">{{ row.deadline }}</td>
+                                <td class="column5">{{ row.date }}</td>
+                                <td class="column6">{{ row.tags }}</td>
+                                <td class="column7"><img src="images/fav.png" height="20px" width="50px" class="fav-btn grayscale" id={{ row.id }}  onclick=addToFav(this.id) /></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap-filestyle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>
