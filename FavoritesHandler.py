@@ -16,7 +16,7 @@ class FavoritesHandler(webapp2.RequestHandler):
         user_obj = query.get()
         res = ''
         #Check if the user exists
-        if user_obj != None:
+        if user_obj is not None:
             collection = '['
             #Check if the user has a favorites list
             if user_obj.favorites != None:
@@ -36,7 +36,7 @@ class FavoritesHandler(webapp2.RequestHandler):
                     collection = collection[:-1]+']'
                     res = json.loads(collection)
             # Passing the list of favorites along with template to DJango's templating engine
-            self.response.write(template.render(path, {'rows': res}))
+        self.response.write(template.render(path, {'rows': res}))
 
     # Handles /editFav request, either Adds or removes the opportunity form favorites
     def post(self):
